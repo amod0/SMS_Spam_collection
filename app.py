@@ -5,21 +5,6 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-def download_nltk_resources(file='nltk.txt'):
-    # Open the nltk.txt file and read each line
-    with open(file, 'r') as f:
-        for resource in f:
-            resource = resource.strip()
-            try:
-                nltk.data.find(f'corpora/{resource}')  # Check if the resource is already downloaded
-                print(f"'{resource}' is already available.")
-            except LookupError:
-                print(f"Downloading '{resource}'...")
-                nltk.download(resource)
-
-# Call the function to download necessary NLTK resources
-download_nltk_resources()
-
 ps = PorterStemmer()
 
 def transform_text(text):
