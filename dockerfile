@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Install the Python packages listed in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-RUN python -m nltk.downloader punkt_tab
+RUN python -m nltk.downloader punkt
 
 # Download NLTK resources (stopwords, punkt, etc.)
 RUN python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt')"
